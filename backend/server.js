@@ -12,6 +12,15 @@ const io = new Server(server, {
   cors: { origin: process.env.CLIENT_URL || 'http://localhost:5173', methods: ['GET', 'POST'] }
 });
 
+process.on('uncaughtException', err => {
+  console.error('❌ Uncaught Exception:', err.message)
+  process.exit(1)
+})
+
+process.on('unhandledRejection', err => {
+  console.error('❌ Unhandled Rejection:', err.message)
+  process.exit(1)
+})
 // Middleware
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173', credentials: true }));
 app.use(express.json());
@@ -46,15 +55,14 @@ io.on('connection', (socket) => {
     });
   });
 });
-
-// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
-    console.log('✅ MongoDB Connected');
+    console.log('✅ MongoDB Connected')
     server.listen(process.env.PORT || 5000, () =>
       console.log(`🚀 Server running on port ${process.env.PORT || 5000}`)
-    );
+    )
   })
-  .catch(err => console.error('❌ MongoDB Error:', err));
-
-module.exports = { io };
+  .catch(err => {
+    console.error('❌ MongoDB Error:', err.message)
+    process.exit(1)
+  })
