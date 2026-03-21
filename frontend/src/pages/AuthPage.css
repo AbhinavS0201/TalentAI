@@ -1,0 +1,56 @@
+.auth-page {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 80px 24px 40px; position: relative; overflow: hidden;
+}
+.auth-bg { position: absolute; inset: 0; pointer-events: none; }
+.auth-orb {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: var(--accent); filter: blur(120px); opacity: 0.07;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.auth-container { position: relative; z-index: 2; width: 100%; max-width: 440px; }
+.auth-card {
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: 24px; padding: 40px; box-shadow: var(--shadow-lg);
+}
+.auth-logo {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 28px;
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;
+}
+.auth-title { font-size: 1.8rem; margin-bottom: 8px; }
+.auth-sub { color: var(--text2); font-size: 14px; margin-bottom: 24px; }
+.auth-form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 20px; }
+.input-wrap { position: relative; }
+.input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text3); pointer-events: none; }
+.input-with-icon { padding-left: 40px !important; }
+.input-with-end { padding-right: 40px !important; }
+.input-end {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: transparent; color: var(--text3); transition: var(--transition);
+}
+.input-end:hover { color: var(--text); }
+.auth-footer-text { text-align: center; font-size: 14px; color: var(--text2); }
+.auth-link { color: var(--accent2); font-weight: 500; transition: var(--transition); }
+.auth-link:hover { color: var(--text); }
+.demo-btns {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 20px; padding: 12px; background: var(--bg2);
+  border-radius: var(--radius); border: 1px solid var(--border);
+}
+.demo-label { font-size: 12px; color: var(--text3); }
+.demo-btn {
+  padding: 4px 12px; background: var(--surface2); color: var(--accent2);
+  border: 1px solid rgba(124,109,240,0.3); border-radius: 8px; font-size: 12px;
+  transition: var(--transition); font-family: var(--font-body);
+}
+.demo-btn:hover { background: var(--accent); color: #fff; }
+.role-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
+.role-tab {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 8px;
+  background: var(--bg2); border: 2px solid var(--border); border-radius: var(--radius);
+  color: var(--text2); font-size: 12px; font-weight: 500; transition: var(--transition); cursor: pointer;
+  font-family: var(--font-body);
+}
+.role-tab:hover { border-color: var(--accent); color: var(--text); }
+.role-tab.active { border-color: var(--accent); background: var(--accent-glow); color: var(--accent2); }
+.role-icon { font-size: 1.2rem; }

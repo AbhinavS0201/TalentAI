@@ -1,0 +1,13 @@
+{
+  "name": "talentai-job-portal",
+  "version": "1.0.0",
+  "description": "AI-Powered Job Portal - MERN Stack",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "start": "cd backend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
