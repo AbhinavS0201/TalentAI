@@ -1,11 +1,4 @@
 # 🤖 TalentAI — AI-Powered Job Portal
-
-> A full-stack MERN application with AI features built for the Unified Internship Program
-
-![TalentAI](https://img.shields.io/badge/MERN-Stack-61DAFB?style=for-the-badge&logo=react)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=for-the-badge&logo=openai)
-![Socket.io](https://img.shields.io/badge/Socket.io-Real--time-010101?style=for-the-badge&logo=socket.io)
-
 ---
 
 ## ✨ Key Features
@@ -206,9 +199,3 @@ Use these on the login page:
 | 🔔 Real-time Alerts | Socket.io notifications |
 | 📱 Responsive | Mobile-first design |
 | 🌙 Dark Theme | Modern dark UI with accent colors |
-
----
-
-## 👨‍💻 Built With ❤️ for Unified Internship Program
-
-> This project demonstrates: MERN Stack, REST APIs, JWT Authentication, Socket.io, OpenAI Integration, Cloud File Storage, Role-based Access Control, and modern React patterns.
