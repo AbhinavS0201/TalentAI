@@ -1,194 +1,135 @@
-# 🤖 TalentAI — AI-Powered Job Portal
+# TalentAI 🚀
+
+An AI-powered job portal that connects job seekers and recruiters with smart features like resume analysis, job matching, and role-based dashboards.
 
 ---
 
 ## 🌐 Live Demo
 
-* 🔗 Frontend: https://talent-ai-gamma.vercel.app
-* 🔗 Backend: https://talentai-ovvw.onrender.com
+* **Frontend (Vercel):** https://talent-ai-gamma.vercel.app
+* **Backend (Render):** https://talentai-ovvw.onrender.com
 
 ---
 
-## 📌 Overview
+## 👤 Demo Accounts
 
-TalentAI is a full-stack AI-powered job portal designed to streamline job searching and recruitment. It enables job seekers to discover opportunities and generate AI-assisted content, while recruiters can efficiently manage applications using intelligent insights powered by OpenAI.
+Use these accounts to test the application:
 
----
+* **Job Seeker**
 
-## ✨ Key Features
+  * Email: `demo.seeker@talentai.com`
+  * Password: `demo123`
 
-### 🎯 For Job Seekers
+* **Recruiter**
 
-* Browse & search jobs with filters (type, location, category, experience)
-* 🤖 **AI Cover Letter Generator** (GPT-4o)
-* 🤖 **AI Job Matching** based on user profile
-* Apply with one click + resume upload
-* Real-time application status tracking
-* Save/bookmark jobs
+  * Email: `demo.recruiter@talentai.com`
+  * Password: `demo123`
 
----
+* **Admin**
 
-### 🏢 For Recruiters
-
-* Post jobs with AI-powered description improvement
-* Manage applications in a single dashboard
-* 📊 **AI Resume Scorer** (0–100% match)
-* Update application statuses (Pending → Shortlisted → Interview → Offer)
-* Real-time notifications to applicants
+  * Email: `demo.admin@talentai.com`
+  * Password: `demo123`
 
 ---
 
-### 👑 For Admins
+## ⚙️ Tech Stack
 
-* Platform-wide analytics dashboard
-* User management system
-
----
-
-### 🔔 Real-time Notifications
-
-* Built with Socket.io
-* Instant alerts for applications and status updates
+* **Frontend:** React (Vite), Axios
+* **Backend:** Node.js, Express
+* **Database:** MongoDB Atlas
+* **Authentication:** JWT
+* **AI Integration:** OpenAI API
+* **Deployment:** Vercel (Frontend), Render (Backend)
 
 ---
 
-## 🛠️ Tech Stack
+## 🧩 Features
 
-| Layer          | Technology                 |
-| -------------- | -------------------------- |
-| Frontend       | React 18, Vite, Zustand    |
-| Styling        | Custom CSS (Design System) |
-| Backend        | Node.js, Express.js        |
-| Database       | MongoDB Atlas + Mongoose   |
-| Authentication | JWT + bcryptjs             |
-| AI             | OpenAI GPT-4o-mini         |
-| Real-time      | Socket.io                  |
-| File Upload    | Cloudinary + Multer        |
+* User Authentication (Login/Register)
+* Role-based access (Admin / Recruiter / Job Seeker)
+* Job posting & applications
+* AI-powered resume/job insights
+* Real-time updates (Socket.io)
 
 ---
 
-## 🔐 Environment Variables
+## 🛠️ Local Setup
 
-Create a `.env` file inside the backend folder.
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-OPENAI_API_KEY=your_openai_key
-CLIENT_URL=http://localhost:5173
-```
-
-👉 See `.env.example` for reference.
-
----
-
-## 🚀 Setup Instructions
-
-### 1️⃣ Clone & Install
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/TalentAI.git
+git clone https://github.com/AbhinavS0201/TalentAI.git
 cd TalentAI
 ```
 
----
+### 2. Install dependencies
 
-### 2️⃣ Backend Setup
+**Backend**
 
 ```bash
 cd backend
 npm install
-npm run dev
+```
+
+**Frontend**
+
+```bash
+cd ../frontend
+npm install
 ```
 
 ---
 
-### 3️⃣ Frontend Setup
+### 3. Create `.env` file in `/backend`
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+OPENAI_API_KEY=your_openai_key
+CLIENT_URL=http://localhost:5173
+PORT=5000
+```
+
+---
+
+### 4. Run the project
+
+**Backend**
+
+```bash
+cd backend
+npm run dev
+```
+
+**Frontend**
 
 ```bash
 cd frontend
-npm install
 npm run dev
 ```
 
 ---
 
-### 4️⃣ Run Application
+## ⚠️ Notes
 
-Frontend will run at:
-
-```
-http://localhost:5173
-```
+* Backend may take a few seconds to respond initially (Render free tier sleep).
+* Ensure MongoDB Atlas IP access is configured (`0.0.0.0/0` for testing).
+* AI features require a valid OpenAI API key.
 
 ---
 
-## 📁 Project Structure
+## 📌 Author
 
-```
-ai-job-portal/
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   └── server.js
-│
-└── frontend/
-    ├── components/
-    ├── pages/
-    ├── utils/
-    └── App.jsx
-```
+**Abhinav Rama**
 
----
-
-## 🔑 Demo Accounts
-
-| Role       | Email                                                             | Password |
-| ---------- | ----------------------------------------------------------------- | -------- |
-| Job Seeker | [demo.seeker@talentai.com](mailto:demo.seeker@talentai.com)       | demo123  |
-| Recruiter  | [demo.recruiter@talentai.com](mailto:demo.recruiter@talentai.com) | demo123  |
-| Admin      | [demo.admin@talentai.com](mailto:demo.admin@talentai.com)         | demo123  |
-
----
-
-## 🌐 Deployment
-
-### Backend (Render)
-
-* Root: `backend`
-* Build: `npm install`
-* Start: `npm start`
-* Add environment variables
-
-### Frontend (Vercel)
-
-* Root: `frontend`
-* Add:
-
-```
-VITE_API_URL=https://talentai-ovvw.onrender.com
-```
-
----
-
-## 🧠 Highlights
-
-* Real-world full-stack architecture
-* AI-powered features using OpenAI
-* Role-based authentication & dashboards
-* Scalable and production-ready deployment
-
----
-
-## 📬 Contact
-
-Created by **Abhinav Rama**
 GitHub: https://github.com/AbhinavS0201
+
+---
+
+## ⭐ Acknowledgements
+
+* OpenAI for AI capabilities
+* MongoDB Atlas for cloud database
+* Render & Vercel for deployment
 
 ---
