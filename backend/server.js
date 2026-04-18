@@ -28,7 +28,10 @@ process.on('unhandledRejection', err => {
 
 // ================= MIDDLEWARE =================
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://talent-ai-gamma.vercel.app'
+  ],
   credentials: true
 }));
 
