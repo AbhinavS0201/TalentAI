@@ -63,7 +63,7 @@ mongoose.connect(process.env.MONGO_URI)
     )
   })
   .catch(err => {
-    console.error('❌ MongoDB Error:', err.message)
+    console.error('❌ MongoDB Error FULL:', err)
     console.log("MONGO_URI:", process.env.MONGO_URI);
     process.exit(1)
   })
