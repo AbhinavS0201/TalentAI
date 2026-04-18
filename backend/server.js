@@ -55,6 +55,7 @@ io.on('connection', (socket) => {
     });
   });
 });
+console.log("MONGO_URI:", process.env.MONGO_URI);
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅ MongoDB Connected')
