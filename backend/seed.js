@@ -1,27 +1,22 @@
 // backend/seed.js
+
 require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-require('dotenv').config();
 
 // Import your User model
-const User = require('./models/User'); // adjust path if needed
+const User = require('./models/User');
 
 const seedUsers = async () => {
   try {
+    // Connect to MongoDB
     await mongoose.connect(process.env.MONGO_URI);
     console.log('✅ MongoDB Connected (Seeding)');
 
-    // Check if already exists
-    const existing = await User.findOne({ email: 'demo.seeker@talentai.com' });
-
-    if (existing) {
-      console.log('⚠️ Demo users already exist');
-      process.exit();
-    }
-
+    // Hash password once
     const hashedPassword = await bcrypt.hash('demo123', 10);
 
+    // Demo users
     const users = [
       {
         name: "Demo Seeker",
@@ -34,12 +29,28 @@ const seedUsers = async () => {
         email: "demo.recruiter@talentai.com",
         password: hashedPassword,
         role: "recruiter"
+      },
+      {
+        name: "Demo Admin",
+        email: "demo.admin@talentai.com",
+        password: hashedPassword,
+        role: "admin"
       }
     ];
 
-    await User.insertMany(users);
+    // Insert only if not already present
+    for (const user of users) {
+      const exists = await User.findOne({ email: user.email });
 
-    console.log('🎉 Demo users created successfully!');
+      if (!exists) {
+        await User.create(user);
+        console.log(`✅ Created: ${user.email}`);
+      } else {
+        console.log(`⚠️ Already exists: ${user.email}`);
+      }
+    }
+
+    console.log('🎉 Seeding completed!');
     process.exit();
 
   } catch (error) {
